@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME		= libft.a
-CC			= gcc #gcc -Iinc main.c -L. libft.a
+CC			= cc #gcc -Iinc main.c -L. libft.a
 CFLAGS		= -Wall -Wextra -Werror -I $(INC)
 RM		= rm -rf
 AR		= ar rcs
@@ -26,7 +26,7 @@ SRCS_FILES	= ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c ft_isprint.c ft
 			
 
 BONUS_FILES	=ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c \
-		  	ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+		  	ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c ft_my_alloc.c
 
 SRCS_DIR			= srcs/
 OBJS_DIR			= objs/
@@ -56,7 +56,7 @@ MAGENTA 	= \033[0;95m
 CYAN 		= \033[0;96m
 WHITE		= \033[0;97m
 
-all: $(NAME)
+all:  $(NAME) bonus
 
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
